@@ -1,0 +1,36 @@
+#Evaluation statement
+BB_EXE				"$python.exe opt.py"			
+
+#Number of optimization variables
+DIMENSION 5
+
+#Variable type
+BB_INPUT_TYPE		(R R R R R )
+
+#Boundry
+LOWER_BOUND			(1 0.039 0.045 0.0045 0.0085)
+UPPER_BOUND			(2 0.045 0.05 0.005 0.01)
+
+#Goal and constreint
+BB_OUTPUT_TYPE		OBJ EB EB
+
+#Reading from txt file
+BB_REDIRECTION		no
+
+#Početna točka
+X0                  (2 0.045 0.05 0.005 0.01)
+
+#Max number of evaluations
+MAX_BB_EVAL			200
+
+#Tamplet type
+DIRECTION_TYPE		GPS 2N STATIC
+
+DISPLAY_DEGREE		2
+DISPLAY_ALL_EVAL	yes
+
+#Printout
+DISPLAY_STATS		BBE x:[SOL,] o1:%10.50BJ (BBO)
+STATS_FILE			statistic_nomad207.txt BBE SOL OBJ BBO
+HISTORY_FILE        history207.txt
+SOLUTION_FILE       solution207.txt
